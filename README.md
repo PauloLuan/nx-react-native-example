@@ -2,8 +2,6 @@
 
 This is a monorepo for my studies and ideas related to React Native.
 
-It uses [NX](https://nx.dev/) and it helped me to architect, test, and build those apps on the apps folder.
-
 <span id="top"></span>
 
 <p align="center">
@@ -42,7 +40,64 @@ $ yarn start
 ```sh
 $ yarn test
 ```
+### Create a new app
 
+```
+npx nx g nx-react-native-expo:app <app-name>
+```
+
+When using Nx, you can create multiple applications and themes in the same workspace. If you don't want to prefix your commands with npx, install `@nrwl/cli` globally.
+
+### Start the bundler
+
+```
+npx nx start <app-name>
+```
+
+### Run on devices
+
+Android:
+
+```
+npx nx run-android <app-name>
+```
+
+iOS:
+
+```
+npx nx run-ios <app-name>
+```
+
+Web:
+
+```
+npx nx run-web <app-name>
+```
+
+### Build the app
+
+```
+npx nx bundle <app-name>
+npx nx bundle <app-name> --platform=ios
+npx nx bundle <app-name> --platform=android
+```
+
+## Using components from React library
+
+You can use a component from React library generated using Nx package for React. Once you run:
+
+```
+npx nx g nx-react-native-expo:lib ui-button
+```
+
+This will generate the `UiButton` component, which you can use in your app.
+
+```jsx
+import { UiButton } from '@myorg/ui-button';
+```
+## Learn more
+
+It uses [NX](https://nx.dev/) and it helped me to architect, test, and build those apps on the apps folder, visit the [Nx Documentation](https://nx.dev) to learn more.
 ## 👤 Paulo Luan
 
 Where you can find me:
